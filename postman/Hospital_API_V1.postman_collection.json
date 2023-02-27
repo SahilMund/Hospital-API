@@ -1,0 +1,830 @@
+{
+	"info": {
+		"_postman_id": "adf641fc-31a5-40b9-8cbe-9aaeb98ad373",
+		"name": "Hospital_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12887398"
+	},
+	"item": [
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "Doctor_Resgister_Success",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "sahil",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "a",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "h1@h1.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/doctors/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"doctors",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Dcotor_register_failuare_filed_shound_not_be_empty",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "luffy",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "lf@op.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "21",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/doctors/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"doctors",
+										"register"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "spec@k.com",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "luffy",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "12",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor_Register_AlreadyExists",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "kk1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "harvey.spector@g.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "kk",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "hv",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/doctors/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"doctors",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Doctor_SIgnIn_Failuare_username_password_not_match",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "hav_spec",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "qwer",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/doctors/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"doctors",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor_SignIn_Failuare_Fields_Empty",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "qqqq",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/doctors/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"doctors",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor_SignIn_Success",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "hav_spec",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "a",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/doctors/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"doctors",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "Register",
+					"item": [
+						{
+							"name": "Patient_Register_Success",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2Y5OGRkMzA5YjAyOGRmMmVhNTU3MzYiLCJuYW1lIjoic2FoaWwiLCJlbWFpbCI6ImgxQGgxLmNvbSIsInBhc3N3b3JkIjoiYSIsImNyZWF0ZWRBdCI6IjIwMjMtMDItMjVUMDQ6MjU6NTUuMDI5WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDItMjVUMDQ6MjU6NTUuMDI5WiIsIl9fdiI6MCwiaWF0IjoxNjc3MzAyMjQ3LCJleHAiOjE2NzgzMDIyNDd9.Cny8R9E4nlL9guZnP2kOqEfZsZBHEBxgEpOCICHSQ2A",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Samuel",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "14555564654654kkk",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"register"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "456",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patients_register_failuare_unautorized",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name ",
+											"value": "pat1",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "6677888",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patient_register_failuare_phone_number_unprocessable",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ZjNDI5YjdkYWZlNTUzMGZkMWI1MDIiLCJuYW1lIjoibGl0cyIsImVtYWlsIjoiaGFydmV5LnNwZWN0b3JAZy5jb20iLCJ1c2VybmFtZSI6Imhhdl9zcGVjIiwicGFzc3dvcmQiOiJhIiwiY3JlYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwidXBkYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwiX192IjowLCJpYXQiOjE2Nzc0Nzc1MTksImV4cCI6MTY3ODQ3NzUxOX0.RaDnL_NjPETQuGqw-C-PAsAiqlRYnYUtGmrzoEsSAl8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "newPat2",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "9juhiu8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patient_register_failuare_fileds_missing",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ZjNDI5YjdkYWZlNTUzMGZkMWI1MDIiLCJuYW1lIjoibGl0cyIsImVtYWlsIjoiaGFydmV5LnNwZWN0b3JAZy5jb20iLCJ1c2VybmFtZSI6Imhhdl9zcGVjIiwicGFzc3dvcmQiOiJhIiwiY3JlYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwidXBkYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwiX192IjowLCJpYXQiOjE2Nzc0Nzc1MTksImV4cCI6MTY3ODQ3NzUxOX0.RaDnL_NjPETQuGqw-C-PAsAiqlRYnYUtGmrzoEsSAl8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "koo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patient_register_failuare_already_exists",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ZjNDI5YjdkYWZlNTUzMGZkMWI1MDIiLCJuYW1lIjoibGl0cyIsImVtYWlsIjoiaGFydmV5LnNwZWN0b3JAZy5jb20iLCJ1c2VybmFtZSI6Imhhdl9zcGVjIiwicGFzc3dvcmQiOiJhIiwiY3JlYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwidXBkYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwiX192IjowLCJpYXQiOjE2Nzc0Nzc1MTksImV4cCI6MTY3ODQ3NzUxOX0.RaDnL_NjPETQuGqw-C-PAsAiqlRYnYUtGmrzoEsSAl8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "aaa",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "14555564654654",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CreateReport",
+					"item": [
+						{
+							"name": "Patient_Create_Report_Failaure_empty_input",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ZjNDI5YjdkYWZlNTUzMGZkMWI1MDIiLCJuYW1lIjoibGl0cyIsImVtYWlsIjoiaGFydmV5LnNwZWN0b3JAZy5jb20iLCJ1c2VybmFtZSI6Imhhdl9zcGVjIiwicGFzc3dvcmQiOiJhIiwiY3JlYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwidXBkYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwiX192IjowLCJpYXQiOjE2Nzc0Nzc1MTksImV4cCI6MTY3ODQ3NzUxOX0.RaDnL_NjPETQuGqw-C-PAsAiqlRYnYUtGmrzoEsSAl8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/63f99ba74ffa0901eca78fd3/create_report/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"63f99ba74ffa0901eca78fd3",
+										"create_report",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patient_Create_Report_Inavlid_Status_Input",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ZjNDI5YjdkYWZlNTUzMGZkMWI1MDIiLCJuYW1lIjoibGl0cyIsImVtYWlsIjoiaGFydmV5LnNwZWN0b3JAZy5jb20iLCJ1c2VybmFtZSI6Imhhdl9zcGVjIiwicGFzc3dvcmQiOiJhIiwiY3JlYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwidXBkYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwiX192IjowLCJpYXQiOjE2Nzc0Nzc1MTksImV4cCI6MTY3ODQ3NzUxOX0.RaDnL_NjPETQuGqw-C-PAsAiqlRYnYUtGmrzoEsSAl8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/63f99ba74ffa0901eca78fd3/create_report/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"63f99ba74ffa0901eca78fd3",
+										"create_report",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patient_Create_Report_failuare_inavlid_doctor_or_patient",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ZjNDI5YjdkYWZlNTUzMGZkMWI1MDIiLCJuYW1lIjoibGl0cyIsImVtYWlsIjoiaGFydmV5LnNwZWN0b3JAZy5jb20iLCJ1c2VybmFtZSI6Imhhdl9zcGVjIiwicGFzc3dvcmQiOiJhIiwiY3JlYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwidXBkYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwiX192IjowLCJpYXQiOjE2Nzc0Nzc1MTksImV4cCI6MTY3ODQ3NzUxOX0.RaDnL_NjPETQuGqw-C-PAsAiqlRYnYUtGmrzoEsSAl8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/63f99ba74ffa0901eca78fd3/create_report/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"63f99ba74ffa0901eca78fd3",
+										"create_report",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patient_Create_Report_Sucess",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2ZjNDI5YjdkYWZlNTUzMGZkMWI1MDIiLCJuYW1lIjoibGl0cyIsImVtYWlsIjoiaGFydmV5LnNwZWN0b3JAZy5jb20iLCJ1c2VybmFtZSI6Imhhdl9zcGVjIiwicGFzc3dvcmQiOiJhIiwiY3JlYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwidXBkYXRlZEF0IjoiMjAyMy0wMi0yN1QwNTo0MTo0Ny45NDlaIiwiX192IjowLCJpYXQiOjE2Nzc0Nzc1MTksImV4cCI6MTY3ODQ3NzUxOX0.RaDnL_NjPETQuGqw-C-PAsAiqlRYnYUtGmrzoEsSAl8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/63fc46cd7dafe5530fd1b50b/create_report/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"63fc46cd7dafe5530fd1b50b",
+										"create_report",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "FetchPatientById",
+					"item": [
+						{
+							"name": "All_Report_Failuare_Patient_not_found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/63f99ba74ffa0901eca78fd3/all_reports/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"63f99ba74ffa0901eca78fd3",
+										"all_reports",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All_Report_Success",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/63fc46cd7dafe5530fd1b50b/all_reports/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"63fc46cd7dafe5530fd1b50b",
+										"all_reports",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All_report_Failuare_record_not_found",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInRkbhkvbih5cCI6IkpXVCJ9.eyJfaWQiOiI2M2Y5OGRkMzA5YjAyOGRmMmVhNTU3MzYiLCJuYW1lIjoic2FoaWwiLCJlbWFpbCI6ImgxQGgxLmNvbSIsInBhc3N3b3JkIjoiYSIsImNyZWF0ZWRBdCI6IjIwMjMtMDItMjVUMDQ6MjU6NTUuMDI5WiIsInVwZGF0ZWRBdCI6IjIwMjMtMDItMjVUMDQ6MjU6NTUuMDI5WiIsIl9fdiI6MCwiaWF0IjoxNjc3MzEyMDc5LCJleHAiOjE2NzgzMTIwNzl9.sji37yQFtzkj7pYNBZoxS2AzQA0UuiOEg_pzit7rpoY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:8040/api/v1/patients/63fc517d79c4f5ecc074824e/all_reports/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8040",
+									"path": [
+										"api",
+										"v1",
+										"patients",
+										"63fc517d79c4f5ecc074824e",
+										"all_reports",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "FetchAllPatinetReportByStatus_Success",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8040/api/v1/reports/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8040",
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchBySatatus_no_record_found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8040/api/v1/reports/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8040",
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
