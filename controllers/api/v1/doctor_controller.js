@@ -16,12 +16,13 @@ module.exports.register = async function (req, res) {
   }
 
   //Check if the doctor is already registered in , give them the same resp with the existing data
-  let existingDoctor = await Doctor.findOne({ email: email });
+  let existingDoctorByEmail = await Doctor.findOne({ email: email });
+  let existingDoctorByUserName = await Doctor.findOne({ username: username });
 
-  if (existingDoctor) {
-    existingDoctor = await existingDoctor.toObject();
+  if (existingDoctorByEmail || existingDoctorByUserName) {
+    // existingDoctorByEmail = await existingDoctorByEmail;
 
-    let { name, email , username } = existingDoctor;
+    let { name, email , username } = existingDoctorByEmail || existingDoctorByUserName;
     return res.status(405).json({
       data: {
         doctor: { name, email , username},
@@ -74,13 +75,13 @@ module.exports.login = async function (req, res) {
   try {
     let doctor = await Doctor.findOne({ username: username });
 
-    let enteredPassword = req.body.password;
-    let password = doctor.password;
+    let enteredPassword =  req.body.password;
+    let password = doctor ? doctor.password : '';
 
     //  check whether the entered email and password is matching or with the user's mail
     if (!doctor || enteredPassword !== password) {
       return res.status(401).json({
-        message: "Invalid Email/Password",
+        message: "Invalid Username / Password",
         success: false,
       });
     }
