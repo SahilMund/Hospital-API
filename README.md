@@ -28,7 +28,7 @@ This API is for the doctors of a Hospital which has been allocated by the govt f
 1. /doctors/register 
 
 ```
-- This is a POST method.
+- This is a POST request.
 - All the required fields such as username,email,password,name should not be empty
 - User should not able to register is he is already a registered user
 - Only Unregistered users can register
@@ -37,7 +37,7 @@ This API is for the doctors of a Hospital which has been allocated by the govt f
 2. /doctors/login
 
 ```
-- This is a POST method.
+- This is a POST request.
 - Username and password should not be empty
 - Email/Password should match correctly with the details present in the db
 - If the user logged in successfully, then we are creating a JWT token for the user.
@@ -46,7 +46,7 @@ This API is for the doctors of a Hospital which has been allocated by the govt f
 3. /patients/register   -> Private route
 
 ```
-- This is a POST method.
+- This is a POST request.
 - Only the logged In doctors can access this route to register a new patient as it is a private route
 - Name and Phone fields should not be empty
 - Phone number should be a valid number
@@ -57,7 +57,7 @@ This API is for the doctors of a Hospital which has been allocated by the govt f
 4. /patients/:id/create_report -> private route
 
 ```
-- This is a POST method.
+- This is a POST request.
 - Only the logged In doctors can access this route to create the report as it is a private route.
 - Patient Id is in the Params and from request's body we can get the status data. Also from authorization header token we are fetching the payload to extract the doctor Id to create the report.
 - Entered status should not be empty and should be valid i.e. should be either of the status enums
@@ -68,7 +68,7 @@ This API is for the doctors of a Hospital which has been allocated by the govt f
 5. /patients/:id/all_reports → List all the reports of a patient oldest to latest
 
 ```
-- This is a GET method.
+- This is a GET request.
 - Patient Id is coming from Url Params
 - Patient Id should be a valid Object Id
 - Only registered Patients details can be generated, else it will ask to register the user
@@ -80,7 +80,7 @@ This API is for the doctors of a Hospital which has been allocated by the govt f
 6. /reports/:status → List all the reports of all the patients filtered by a specific status
 
 ```
-- This is a GET method.
+- This is a GET request.
 - Status field is coming from Url
 - Status should not be empty
 - If no record found for the registered patient with the given status , then it will convey the message that 'Records not found'.
