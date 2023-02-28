@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 // defining PORT to run my express server
-const PORT = 8040;
+const PORT = process.env.PORT || 8040;
 
 // requiring mongoose library to be able to perform operations on mongoDB
 const db = require("./config/mongoose");
