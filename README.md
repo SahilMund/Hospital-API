@@ -12,8 +12,8 @@ This API is for the doctors of a Hospital which has been allocated by the govt f
 
 * Doctors can log in ,Each time a patient visits, the doctor will follow 2 steps
 - Register the patient in the app (using phone number, if the patient already exists, just
-    return the patient info in the API)
-- After the checkup, create a Report
+    return the patient info in the API).
+- After the checkup, doctor will create a Report.
 
 * Patient Report will have the following fields
 - Created by doctor
@@ -30,7 +30,7 @@ This API is for the doctors of a Hospital which has been allocated by the govt f
 ```
 - This is a POST request.
 - All the required fields such as username,email,password,name should not be empty
-- User should not able to register is he is already a registered user
+- User should not be able to register if he is already a registered user
 - Only Unregistered users can register
 
 ```
@@ -40,29 +40,29 @@ This API is for the doctors of a Hospital which has been allocated by the govt f
 - This is a POST request.
 - Username and password should not be empty
 - Email/Password should match correctly with the details present in the db
-- If the user logged in successfully, then we are creating a JWT token for the user.
+- If the user logged in successfully, then we are creating a JWT token for the user to use it for accessing protected routes.
 
 ```
-3. /patients/register   -> Private route
+3. /patients/register   -> protected route
 
 ```
 - This is a POST request.
-- Only the logged In doctors can access this route to register a new patient as it is a private route
+- Only the logged In doctors can access this route to register a new patient as it is a protected route
 - Name and Phone fields should not be empty
 - Phone number should be a valid number
 - If the Patient already exists, then send them the patient info with the message 'already exists'
 - Only unregistered patients details can be registered
 ```
 
-4. /patients/:id/create_report -> private route
+4. /patients/:id/create_report -> protected route
 
 ```
 - This is a POST request.
-- Only the logged In doctors can access this route to create the report as it is a private route.
+- Only the logged In doctors can access this route to create the report as it is a protected route.
 - Patient Id is in the Params and from request's body we can get the status data. Also from authorization header token we are fetching the payload to extract the doctor Id to create the report.
 - Entered status should not be empty and should be valid i.e. should be either of the status enums
 - If both doctor and patient is present , then creating a report and pushing it to the patient's reports array.
-- 
+
 ```
 
 5. /patients/:id/all_reports → List all the reports of a patient oldest to latest
