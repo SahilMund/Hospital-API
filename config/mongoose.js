@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const DB_NAME = "Hospital_API_Covid_19";
 
 const connectionString =
-  "mongodb+srv://msahilranjan:mHABrjC9AQe09rRt@cluster0.mgh2yf6.mongodb.net/" +
+  "mongodb://127.0.0.1:27017/" +
   DB_NAME;
-// "mongodb://127.0.0.1:27017/"
+// mongodb+srv://msahilranjan:mHABrjC9AQe09rRt@cluster0.mgh2yf6.mongodb.net/"
 
 //connect to the database
 mongoose.connect(connectionString, {
